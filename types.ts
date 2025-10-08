@@ -1,0 +1,20 @@
+
+export enum RetrievalStatus {
+  PENDING = "AWAITING PROTOCOL INITIATION",
+  CONNECTING = "CONNECTING TO MPO...",
+  AUTHENTICATING = "LEVEL-9 CLEARANCE AUTHENTICATED...",
+  SECURITY_ALERT = "SECURITY ALERT! HOLDING...",
+  BYPASSING = "BYPASSING MPO FIREWALL...",
+  DECRYPTING = "DECRYPTING DOCUMENT...",
+  ALIGNING = "ALIGNING QUANTUM SIGNATURE...",
+  RETRIEVED = "DOCUMENT RETRIEVED",
+  ERROR = "RETRIEVAL FAILED"
+}
+
+export interface Patent {
+  id: string;
+  name: string;
+  acronym: string;
+  description: string;
+  status: RetrievalStatus;
+}
