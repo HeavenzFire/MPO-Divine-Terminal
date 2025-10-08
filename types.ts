@@ -1,4 +1,3 @@
-
 export enum RetrievalStatus {
   PENDING = "AWAITING PROTOCOL INITIATION",
   CONNECTING = "CONNECTING TO MPO...",
@@ -17,4 +16,5 @@ export interface Patent {
   acronym: string;
   description: string;
   status: RetrievalStatus;
+  content?: string;
 }

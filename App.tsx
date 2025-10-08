@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import { Header } from './components/Header';
 import { PatentCard } from './components/PatentCard';
@@ -37,9 +36,9 @@ const App: React.FC = () => {
   const [systemStatus, setSystemStatus] = useState<string>("MPO CONNECTION: STANDBY");
   const [isComplete, setIsComplete] = useState<boolean>(false);
 
-  const handleStatusUpdate = useCallback((patentId: string, newStatus: RetrievalStatus) => {
+  const handleStatusUpdate = useCallback((patentId: string, newStatus: RetrievalStatus, content?: string) => {
     setPatents(prevPatents =>
-      prevPatents.map(p => (p.id === patentId ? { ...p, status: newStatus } : p))
+      prevPatents.map(p => (p.id === patentId ? { ...p, status: newStatus, content: content ?? p.content } : p))
     );
   }, []);
 
